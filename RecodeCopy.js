@@ -128,27 +128,26 @@ async function processQueue(src, dest, rootSrc = src) {
 const helpText = `${colors.rainbow('RecodeCopy Utility')}
 
 ${colors.green.bold(`Usage:`)}
-${colors.italic(`node RecodeCopy.js {input path} {output Path} {options?}`)}
+${colors.italic(`(node) RecodeCopy(.js) {input path} {output Path} {options?}`)}
 
 ${colors.green.bold('Options:')}
 -e, --exclusions {list}\t\t File signatures to exclude from processing. ${colors.yellow('default: None')}
-\t\tExample: ${colors.italic('-e ignorethisfile,.ini,.png')}
 -d, --target {file type}\t File type to recode to ${colors.yellow('default: .mp3')}
 -r, --recoding-formats {list}\t File types to recode ${colors.yellow('default: .flac,.ogg,.opus,.wav,.mp3')}
 -i, --inclusions {list}\t\t File types to simply copy ${colors.yellow('default: .png,.jpg,.jpeg,.gif,.tif,.jfif')}
 --ffmpeg {arguments}   \t\t Manually pass arguments to ffmpeg, options seperated by | ${colors.yellow('default: -v 2')}
 --overwrite            \t\t Choose to overwrite existent files ${colors.yellow('default: false')}
---log-level {quiet|default|error|verbose}\t What to display
+--log-level {quiet|error|verbose}What to display ${colors.yellow('default: default')}
 --ignore-errors        \t\t Choose to ignore errors ${colors.yellow('default: true')}
 --concurrent-processes \t\t Number of processes to be able to run at the same time (ffmpeg) ${colors.yellow('default: 10')}
 
 ${colors.green.bold('Examples:')}
 Recode all audio files from C:\\Users\\Public\\Music to C:\\Users\\Public\\Music\\mp3library to mp3 while copying album arts
-\t${colors.cyan.italic('node RecodeCopy.js C:\\Users\\Public\\Music C:\\Users\\Public\\Music\\mp3library')}
+\t${colors.cyan.italic('(node) RecodeCopy(.js) C:\\Users\\Public\\Music C:\\Users\\Public\\Music\\mp3library')}
 Only copy all flac audio files from ~ to ~/flac, with album arts.
-\t${colors.cyan.italic('node RecodeCopy.js ~ ~/flac -d .flac -r -')}
+\t${colors.cyan.italic('(node) RecodeCopy(.js) ~ ~/flac -d .flac -r -')}
 Recode all from ~ to ~/onlyaudd to flac, level 5, only audio.
-\t${colors.cyan.italic('node RecodeCopy.js ~ ~/onlyaudd -d .flac -i - --fmpeg "-compression_level 5|-c:a libflac"')}
+\t${colors.cyan.italic('(node) RecodeCopy(.js) ~ ~/onlyaudd -d .flac -i - --fmpeg "-compression_level 5|-c:a libflac"')}
 
 Hint: Specify the target in the recoding formats to not copy but recode the file with a consistent bitrate!
 `;
