@@ -89,8 +89,8 @@ async function recodeFile(ext, filePath, finalDest) {
             sem.leave();
             resolve();
           })
-          .on('progress', function (progress) {
-            if (loglevel == 'verbose') console.log(`Converting ${abbreviate(filePath)}... ${progress.percent.toFixed(1)}% done`.green.italic);
+          .on('progress', (progress) => {
+            if (loglevel == 'verbose') console.log(`Converting ${abbreviate(filePath)}... ${progress.percent?.toFixed(1)}% done`.green.italic);
           })
           .run();
       });
